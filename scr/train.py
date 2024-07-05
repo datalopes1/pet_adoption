@@ -8,9 +8,7 @@ from sklearn import metrics
 from sklearn import model_selection
 from sklearn import pipeline
 
-from sklearn import tree
 from sklearn import linear_model
-from sklearn import ensemble
 
 from feature_engine import imputation
 from feature_engine import encoding
@@ -99,10 +97,10 @@ plt.grid(True)
 plt.plot([0,1], [0,1], '--')
 plt.show()
 # %%
-model_pickle = pd.Series({
+model_series = pd.Series({
     "model": lr,
     "features": features,
     "auc_test": auc_test
 })
 
-model_pickle.to_pickle("modelo_pets.pkl")
+model_series.to_pickle("../models/modelo_pets.pkl")
